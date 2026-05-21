@@ -1,0 +1,117 @@
+/* RESET */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+
+body{
+    width: 100%;
+    height: 100vh;
+
+    background: #111827;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: rgb(60, 161, 255);
+
+    overflow: hidden;
+}
+
+/* APP */
+
+#app{
+    width: 100%;
+    height: 100vh;
+
+    overflow-y: auto;
+
+    padding: 30px;
+}
+
+/* PADRÃO DAS PÁGINAS */
+
+.page{
+    width: 100%;
+    min-height: 100%;
+
+    position: relative;
+
+    padding-bottom: 80px;
+}
+
+/* TITULO */
+
+.page-title{
+    font-size: 40px;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+/* FOOTER PADRÃO */
+
+.page-footer{
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 50px;
+
+    background: #0f172a;
+
+    border-top: 1px solid #1e293b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+/* BOTÃO PADRÃO */
+
+.btn{
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btn:hover{
+    transform: scale(1.03);
+
+    background: #1d4ed8;
+}
+
+#btn-exit{
+    background: #ef4444;
+}
+
+#btnReset{
+    background: #f59e0b;
+}
+
+#btn-help{
+    background: #10b981;
+}
