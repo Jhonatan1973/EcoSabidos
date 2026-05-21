@@ -30,7 +30,7 @@ Sistema de quiz desenvolvido com HTML, CSS e JavaScript puro, utilizando arquite
 
 # 📌 1. Criação de Novas Páginas
 
-Todas as páginas devem seguir obrigatoriamente o padrão abaixo:
+Todas as páginas devem seguir obrigatoriamente o padrão:
 
 pages
     pgxxxx
@@ -38,10 +38,7 @@ pages
         pgxxxx.css
         pgxxxx.js
 
----
-
-## ⚠️ Regras obrigatórias
-
+⚠️ Regras obrigatórias:
 - Nome de pastas e arquivos em minúsculo
 - Utilizar sequência numérica crescente (pg0001, pg0002, pg0003...)
 - Nunca pular números
@@ -49,16 +46,12 @@ pages
 
 ---
 
-# ⚙️ 2. Registro no routes.js
+# ⚙️ 2. Registro de Páginas (routes.js)
 
-Após criar a página, registrar no arquivo:
-
+Após criar uma nova página, registrar em:
 src/settings/routes.js
 
----
-
-## Padrão de rota
-
+Padrão:
 nomeDaPagina: {
     title: "nomeDaPagina",
     html: "./src/pages/pgxxxx/pgxxxx.html",
@@ -66,15 +59,12 @@ nomeDaPagina: {
     js: "./src/pages/pgxxxx/pgxxxx.js"
 },
 
----
-
-## Exemplo
-
+Exemplo:
 perguntas: {
-    title: "perguntas",
-    html: "./src/pages/pg0007/pg0007.html",
-    css: "./src/pages/pg0007/pg0007.css",
-    js: "./src/pages/pg0007/pg0007.js"
+    title: "Perguntas",
+    html: "./src/pages/pg0002/pg0002.html",
+    css: "./src/pages/pg0002/pg0002.css",
+    js: "./src/pages/pg0002/pg0002.js"
 },
 
 ---
@@ -82,70 +72,63 @@ perguntas: {
 # 🧭 3. Navegação entre páginas
 
 Para trocar de página usar:
-
 <button class="btn" onclick="loadPage('perguntas')">Mudar de página</button>
 
----
-
-## ⚠️ Importante
-
-O nome dentro do loadPage deve ser igual ao nome da rota no routes.js
+⚠️ Importante:
+O nome dentro do loadPage deve ser exatamente igual ao nome da rota no routes.js
 
 Exemplo:
-
 loadPage('perguntas')
 
 ---
 
-# 🎨 4. Sistema de estilo
+# 🎨 4. Sistema de Estilo (CSS GLOBAL)
 
-O projeto já possui estilos globais prontos:
+O projeto utiliza APENAS CSS global.
 
-- cores padrão
-- tamanhos padrão
-- layout base
-- botões estilizados
-- topbar
-- caixa de perguntas
+Todos os estilos estão em:
+src/assets/css/global.css
+
+O sistema NÃO usa mais components.
+
+Agora funciona assim:
+- Você usa IDs ou classes padrões
+- O CSS global já aplica o estilo automaticamente
+
+Exemplos:
+<button id="btn-exit">Sair</button>
+<button id="btn-reset">Resetar</button>
+<button id="btn-help">Ajuda</button>
+<button id="btn-config">Configurações</button>
+
+<div class="question-box">Pergunta aqui</div>
+
+<div class="topbar"><h1>Título da Página</h1></div>
 
 ---
 
-## ⚠️ Regra importante
-
-NUNCA alterar o CSS global sem aviso.
+⚠️ Regra importante:
+NUNCA alterar o CSS global sem autorização.
 
 src/assets/css/global.css
 
 ---
 
-## O que pode ser alterado
-
-Dentro da sua página:
-
+O que pode ser alterado:
 - pgxxxx.css
 - pgxxxx.js
-
-Você pode editar livremente sem afetar o sistema.
-
----
-
-# 🧩 5. Componentes com CSS embutido
-
-Já possuem estilo global:
-
-- botões (saída, reset, respostas, ajuda, configurações)
-- caixa de perguntas
-- topbar
 
 ---
 
 # 🚨 Regras finais
 
-- Sempre criar páginas com padrão pgxxxx, (xxxx) sendo o numero da pagina
+- Sempre criar páginas no padrão pgxxxx
 - Sempre registrar no routes.js
 - Sempre usar loadPage() para navegação
-- Nunca mexer no global sem permissão
+- Nunca mexer no CSS global sem permissão
 - Cada página é independente
+- Estilo baseado em IDs e classes globais
+- Não usar mais components
 
 ---
 
