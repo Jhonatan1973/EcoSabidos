@@ -2,24 +2,28 @@ const routes = {
 
     home: {
         title: "Home",
+        number: "pg0001",
         html: "./src/pages/pg0001/pg0001.html",
         css: "./src/pages/pg0001/pg0001.css",
         js: "./src/pages/pg0001/pg0001.js"
-    },
-
-    perguntas: {
-        title: "Perguntas",
+    }
+    ,config: {
+        title: "config",
+        number: "pg0002",
         html: "./src/pages/pg0002/pg0002.html",
         css: "./src/pages/pg0002/pg0002.css",
         js: "./src/pages/pg0002/pg0002.js"
     },
 
-    usuarios: {
-        title: "Home",
-        html: "./src/pages/usuarios/usuarios.html",
-        css: "./src/pages/usuarios/usuarios.css",
-        js: "./src/pages/usuarios/usuarios.js"
-    }
+
+    perguntas: {
+        title: "perguntas",
+        number: "pg0003",
+        html: "./src/pages/pg0003/pg0003.html",
+        css: "./src/pages/pg0003/pg0003.css",
+        js: "./src/pages/pg0003/pg0003.js"
+    },
+
 };
 async function loadPage(page) {
 
@@ -33,7 +37,7 @@ async function loadPage(page) {
 
     html += `
         <div class="page-footer">
-            <p>${route.title}</p>
+            <p>${route.title} - ${route.number}</p>
         </div>
     `;
 
