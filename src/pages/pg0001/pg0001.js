@@ -5,21 +5,24 @@ const translations = {
         appSubtitle: "Teste seus conhecimentos sobre sustentabilidade",
         startBtn: "COMEÇAR",
         testBtn: "TESTE RÁPIDO",
-        infoText: "Aprenda sobre meio ambiente enquanto se diverte!"
+        infoText: "Aprenda sobre meio ambiente enquanto se diverte!",
+        scoreLabel: "Pontuação: "
     },
     en: {
         appTitle: "EcoSabidos",
         appSubtitle: "Test your knowledge about sustainability",
         startBtn: "START",
         testBtn: "QUICK TEST",
-        infoText: "Learn about the environment while having fun!"
+        infoText: "Learn about the environment while having fun!",
+        scoreLabel: "Score: "
     },
     es: {
         appTitle: "EcoSabidos",
         appSubtitle: "Prueba tus conocimientos sobre sostenibilidad",
         startBtn: "COMENZAR",
         testBtn: "PRUEBA RÁPIDA",
-        infoText: "¡Aprende sobre el medio ambiente mientras te diviertes!"
+        infoText: "¡Aprende sobre el medio ambiente mientras te diviertes!",
+        scoreLabel: "Puntuación: "
     }
 };
 
@@ -29,6 +32,15 @@ export function init() {
     // Inicializar idioma
     setLanguage(currentLanguage);
     setupLanguageButtons();
+    updateHomeScore();
+}
+
+function updateHomeScore() {
+    const data = JSON.parse(localStorage.getItem('ecosabidos_stats')) || { score: 0 };
+    const scoreVal = document.getElementById('homeScoreValue');
+    if (scoreVal) {
+        scoreVal.textContent = data.score;
+    }
 }
 
 function setupLanguageButtons() {

@@ -7,6 +7,15 @@
 </head>
 <body>
 <div class="page home-page">
+    <!-- Indicador de Pontuação -->
+    <div class="score-indicator" id="homeScoreIndicator" onclick="loadPage('pontuacao')">
+        <span class="score-icon">🏆</span>
+        <span class="score-text">
+            <span class="score-label" data-i18n="scoreLabel">Pontuação: </span>
+            <span class="score-value" id="homeScoreValue">0</span>
+        </span>
+    </div>
+
     <!-- Seletor de Idioma -->
     <div class="language-selector">
         <button class="lang-btn" data-lang="pt" title="Português">

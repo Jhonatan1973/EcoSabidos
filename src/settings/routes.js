@@ -24,6 +24,15 @@ const routes = {
         js: "src/pages/pg0003/pg0003.js"
     },
 
+
+    pontuacao: {
+        title: "pontuacao",
+        number: "pg0004",
+        html: "./src/pages/pg0004/pg0004.html",
+        css: "./src/pages/pg0004/pg0004.css",
+        js: "./src/pages/pg0004/pg0004.js"
+    },
+
 };
 async function loadPage(page) {
 

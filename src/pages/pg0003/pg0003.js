@@ -269,6 +269,32 @@ function loadQuestion() {
     answered = false;
 }
 
+function saveToStats(questionText, userAnswerText, correctAnswerText, isCorrect) {
+    let data = JSON.parse(localStorage.getItem('ecosabidos_stats')) || {
+        score: 0,
+        correct: 0,
+        incorrect: 0,
+        history: []
+    };
+    
+    if (isCorrect) {
+        data.score += 10;
+        data.correct += 1;
+    } else {
+        data.incorrect += 1;
+    }
+    
+    data.history.push({
+        question: questionText,
+        userAnswer: userAnswerText,
+        correctAnswer: correctAnswerText,
+        isCorrect: isCorrect,
+        timestamp: new Date().toISOString()
+    });
+    
+    localStorage.setItem('ecosabidos_stats', JSON.stringify(data));
+}
+
 function selectAnswer(selectedIndex, correctIndex) {
     if (answered) return;
     
@@ -283,6 +309,13 @@ function selectAnswer(selectedIndex, correctIndex) {
             btn.classList.add('incorrect');
         }
     });
+    
+    const questionObj = quizQuestions[currentLanguage][currentQuestion];
+    const isCorrect = selectedIndex === correctIndex;
+    const userAnswerText = questionObj.options[selectedIndex];
+    const correctAnswerText = questionObj.options[correctIndex];
+    
+    saveToStats(questionObj.question, userAnswerText, correctAnswerText, isCorrect);
     
     if (selectedIndex === correctIndex) {
         score++;

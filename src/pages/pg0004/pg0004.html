@@ -1,0 +1,80 @@
+<div class="page score-page">
+    <!-- Seletor de Idioma -->
+    <div class="language-selector">
+        <button class="lang-btn" data-lang="pt" title="Português">
+            🇧🇷 PT
+        </button>
+        <button class="lang-btn" data-lang="en" title="English">
+            🇺🇸 EN
+        </button>
+        <button class="lang-btn" data-lang="es" title="Español">
+            🇪🇸 ES
+        </button>
+    </div>
+
+    <!-- Botão Voltar -->
+    <button class="btn btn-back" onclick="loadPage('home')" data-i18n="backBtn">← VOLTAR</button>
+
+    <!-- Container do Score -->
+    <div class="score-container">
+        <div class="score-header">
+            <h1 class="page-title" data-i18n="scorePageTitle">Desempenho e Pontuação</h1>
+            <p class="score-subtitle" data-i18n="scorePageSubtitle">Acompanhe suas estatísticas de sustentabilidade em tempo real</p>
+        </div>
+
+        <!-- Grid de Estatísticas -->
+        <div class="stats-grid">
+            <div class="stat-card score-card">
+                <div class="stat-icon">🏆</div>
+                <div class="stat-info">
+                    <p class="stat-label" data-i18n="totalScoreLabel">Pontuação Total</p>
+                    <h2 class="stat-value" id="statTotalScore">0</h2>
+                </div>
+            </div>
+            
+            <div class="stat-card correct-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-info">
+                    <p class="stat-label" data-i18n="totalCorrectLabel">Total de Acertos</p>
+                    <h2 class="stat-value" id="statTotalCorrect">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card incorrect-card">
+                <div class="stat-icon">❌</div>
+                <div class="stat-info">
+                    <p class="stat-label" data-i18n="totalIncorrectLabel">Total de Erros</p>
+                    <h2 class="stat-value" id="statTotalIncorrect">0</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Histórico e Filtros -->
+        <div class="history-section">
+            <div class="history-header">
+                <h3 class="history-title" data-i18n="historyTitle">Histórico de Respostas</h3>
+                
+                <!-- Abas de Filtro -->
+                <div class="filter-tabs">
+                    <button class="tab-btn active" data-filter="all" data-i18n="filterAll">Todas</button>
+                    <button class="tab-btn" data-filter="correct" data-i18n="filterCorrect">Acertos</button>
+                    <button class="tab-btn" data-filter="incorrect" data-i18n="filterIncorrect">Erros</button>
+                </div>
+            </div>
+
+            <!-- Lista de Respostas (Timeline) -->
+            <div class="history-list" id="historyList">
+                <!-- Itens serão adicionados via JavaScript -->
+                <div class="empty-history" id="emptyHistory">
+                    <div class="empty-icon">🍃</div>
+                    <p data-i18n="emptyHistoryText">Você ainda não respondeu a nenhuma pergunta. Comece um quiz para acumular pontos!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ações no Rodapé da Página -->
+        <div class="score-actions">
+            <button class="btn" id="btnReset" data-i18n="resetBtn">Resetar Histórico</button>
+        </div>
+    </div>
+</div>
