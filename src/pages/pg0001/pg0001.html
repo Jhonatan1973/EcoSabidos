@@ -2,17 +2,49 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoSabidos</title>
 </head>
 <body>
-<button class="btn" onclick="loadPage('perguntas')">
-        COMEÇAR
-    </button>
+<div class="page home-page">
+    <!-- Seletor de Idioma -->
+    <div class="language-selector">
+        <button class="lang-btn" data-lang="pt" title="Português">
+            🇧🇷 PT
+        </button>
+        <button class="lang-btn" data-lang="en" title="English">
+            🇺🇸 EN
+        </button>
+        <button class="lang-btn" data-lang="es" title="Español">
+            🇪🇸 ES
+        </button>
+    </div>
 
-    <button class="btn" onclick="loadPage('config')">
-        Configurações
-    </button>
+    <!-- Container Principal -->
+    <div class="home-container">
+        <!-- Logo -->
+        <div class="logo-section">
+            <div class="logo">🌍</div>
+            <h1 class="app-title" data-i18n="appTitle">EcoSabidos</h1>
+            <p class="app-subtitle" data-i18n="appSubtitle">Teste seus conhecimentos sobre sustentabilidade</p>
+        </div>
 
-    <div id="buttons"></div>
+        <!-- Buttons -->
+        <div class="buttons-section">
+            <button class="btn btn-primary" onclick="loadPage('perguntas')" data-i18n="startBtn">
+                COMEÇAR
+            </button>
+            
+            <button class="btn btn-secondary" onclick="loadPage('perguntas')" data-i18n="testBtn">
+                TESTE RÁPIDO
+            </button>
+        </div>
+
+        <!-- Info -->
+        <div class="info-section">
+            <p class="info-text" data-i18n="infoText">Aprenda sobre meio ambiente enquanto se diverte!</p>
+        </div>
+    </div>
+</div>
 </body>
 </html>

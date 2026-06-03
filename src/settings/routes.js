@@ -3,25 +3,25 @@ const routes = {
     home: {
         title: "Home",
         number: "pg0001",
-        html: "./src/pages/pg0001/pg0001.html",
-        css: "./src/pages/pg0001/pg0001.css",
-        js: "./src/pages/pg0001/pg0001.js"
+        html: "src/pages/pg0001/pg0001.html",
+        css: "src/pages/pg0001/pg0001.css",
+        js: "src/pages/pg0001/pg0001.js"
     }
     ,config: {
         title: "config",
         number: "pg0002",
-        html: "./src/pages/pg0002/pg0002.html",
-        css: "./src/pages/pg0002/pg0002.css",
-        js: "./src/pages/pg0002/pg0002.js"
+        html: "src/pages/pg0002/pg0002.html",
+        css: "src/pages/pg0002/pg0002.css",
+        js: "src/pages/pg0002/pg0002.js"
     },
 
 
     perguntas: {
         title: "perguntas",
         number: "pg0003",
-        html: "./src/pages/pg0003/pg0003.html",
-        css: "./src/pages/pg0003/pg0003.css",
-        js: "./src/pages/pg0003/pg0003.js"
+        html: "src/pages/pg0003/pg0003.html",
+        css: "src/pages/pg0003/pg0003.css",
+        js: "src/pages/pg0003/pg0003.js"
     },
 
 };
@@ -55,7 +55,7 @@ async function loadPage(page) {
     document.head.appendChild(link);
 
     // IMPORTANTE: importar JS UMA vez só
-    const module = await import(route.js);
+    const module = await import(new URL(route.js, window.location.href).href);
 
     if (module.init) {
         module.init();

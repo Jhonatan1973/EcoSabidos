@@ -1,7 +1,46 @@
-<div class="topbar">
-    <h1>perguntas</h1>
-</div>
+<div class="page quiz-page">
+    <!-- Seletor de Idioma -->
+    <div class="language-selector">
+        <button class="lang-btn" data-lang="pt" title="Português">
+            🇧🇷 PT
+        </button>
+        <button class="lang-btn" data-lang="en" title="English">
+            🇺🇸 EN
+        </button>
+        <button class="lang-btn" data-lang="es" title="Español">
+            🇪🇸 ES
+        </button>
+    </div>
 
-<div class="question-box">
-    Conteúdo da página
+    <!-- Botão Voltar -->
+    <button class="btn btn-back" onclick="loadPage('home')" data-i18n="backBtn">← VOLTAR</button>
+
+    <!-- Quiz Container -->
+    <div class="quiz-container">
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p class="progress-text" id="progressText">Pergunta 1 de 5</p>
+        </div>
+
+        <!-- Question -->
+        <div class="question-container">
+            <h2 class="question-title" id="questionTitle">Qual é o impacto ambiental do desmatamento?</h2>
+            
+            <!-- Options -->
+            <div class="options-container" id="optionsContainer">
+                <!-- Opções serão geradas por JavaScript -->
+            </div>
+        </div>
+
+        <!-- Score Display -->
+        <div class="score-display" id="scoreDisplay" style="display: none;">
+            <h2 class="final-title" data-i18n="finalTitle">Resultado Final</h2>
+            <p class="final-score" id="finalScore">0/5</p>
+            <p class="final-message" id="finalMessage"></p>
+            <button class="btn btn-primary" onclick="loadPage('home')" data-i18n="homeBtn">VOLTAR À HOME</button>
+        </div>
+    </div>
 </div>
