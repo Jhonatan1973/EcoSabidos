@@ -34,6 +34,7 @@ const quizQuestions = {
     pt: [
         {
             question: "Qual é o impacto ambiental do desmatamento?",
+            image: "src/assents/img/deforestation.png",
             options: [
                 "Reduz a poluição do ar",
                 "Aumenta a emissão de CO2 e reduz biodiversidade",
@@ -44,6 +45,7 @@ const quizQuestions = {
         },
         {
             question: "Qual material é mais sustentável para embalagens?",
+            image: "src/assents/img/packaging.png",
             options: [
                 "Plástico comum",
                 "Papel e papelão recicláveis",
@@ -54,6 +56,7 @@ const quizQuestions = {
         },
         {
             question: "Quantos litros de água são necessários para produzir 1kg de algodão?",
+            image: "src/assents/img/water_cotton.png",
             options: [
                 "Aproximadamente 100 litros",
                 "Aproximadamente 1000 litros",
@@ -64,6 +67,7 @@ const quizQuestions = {
         },
         {
             question: "Qual é o principal benefício das energias renováveis?",
+            image: "src/assents/img/renewable_energy.png",
             options: [
                 "São mais caras",
                 "Não prejudicam o meio ambiente e são inexotáveis",
@@ -74,6 +78,7 @@ const quizQuestions = {
         },
         {
             question: "O que é economia circular?",
+            image: "src/assents/img/circular_economy.png",
             options: [
                 "Um sistema econômico que foca em lucro rápido",
                 "Um modelo que minimiza reduz, reutiliza e recicla recursos",
@@ -86,6 +91,7 @@ const quizQuestions = {
     en: [
         {
             question: "What is the environmental impact of deforestation?",
+            image: "src/assents/img/deforestation.png",
             options: [
                 "Reduces air pollution",
                 "Increases CO2 emissions and reduces biodiversity",
@@ -96,6 +102,7 @@ const quizQuestions = {
         },
         {
             question: "Which material is most sustainable for packaging?",
+            image: "src/assents/img/packaging.png",
             options: [
                 "Common plastic",
                 "Recyclable paper and cardboard",
@@ -106,6 +113,7 @@ const quizQuestions = {
         },
         {
             question: "How many liters of water are needed to produce 1kg of cotton?",
+            image: "src/assents/img/water_cotton.png",
             options: [
                 "Approximately 100 liters",
                 "Approximately 1000 liters",
@@ -116,6 +124,7 @@ const quizQuestions = {
         },
         {
             question: "What is the main benefit of renewable energy?",
+            image: "src/assents/img/renewable_energy.png",
             options: [
                 "They are more expensive",
                 "They don't harm the environment and are inexhaustible",
@@ -126,6 +135,7 @@ const quizQuestions = {
         },
         {
             question: "What is a circular economy?",
+            image: "src/assents/img/circular_economy.png",
             options: [
                 "An economic system that focuses on quick profit",
                 "A model that minimizes, reuses, and recycles resources",
@@ -138,6 +148,7 @@ const quizQuestions = {
     es: [
         {
             question: "¿Cuál es el impacto ambiental de la deforestación?",
+            image: "src/assents/img/deforestation.png",
             options: [
                 "Reduce la contaminación del aire",
                 "Aumenta las emisiones de CO2 y reduce la biodiversidad",
@@ -148,6 +159,7 @@ const quizQuestions = {
         },
         {
             question: "¿Qué material es más sostenible para el embalaje?",
+            image: "src/assents/img/packaging.png",
             options: [
                 "Plástico común",
                 "Papel y cartón reciclables",
@@ -158,6 +170,7 @@ const quizQuestions = {
         },
         {
             question: "¿Cuántos litros de agua se necesitan para producir 1kg de algodón?",
+            image: "src/assents/img/water_cotton.png",
             options: [
                 "Aproximadamente 100 litros",
                 "Aproximadamente 1000 litros",
@@ -168,6 +181,7 @@ const quizQuestions = {
         },
         {
             question: "¿Cuál es el principal beneficio de las energías renovables?",
+            image: "src/assents/img/renewable_energy.png",
             options: [
                 "Son más caras",
                 "No dañan el medio ambiente y son inagotables",
@@ -178,6 +192,7 @@ const quizQuestions = {
         },
         {
             question: "¿Qué es la economía circular?",
+            image: "src/assents/img/circular_economy.png",
             options: [
                 "Un sistema económico enfocado en ganancias rápidas",
                 "Un modelo que minimiza, reutiliza y recicla recursos",
@@ -251,6 +266,26 @@ function loadQuestion() {
     const progressText = document.getElementById('progressText');
     if (progressText) {
         progressText.textContent = `Pergunta ${currentQuestion + 1} de ${quizQuestions[currentLanguage].length}`;
+    }
+
+    // Exibir imagem da pergunta, se houver
+    const imageContainer = document.getElementById('questionImageContainer');
+    const questionImage = document.getElementById('questionImage');
+    if (imageContainer && questionImage) {
+        if (question.image) {
+            questionImage.src = question.image;
+            questionImage.alt = question.question;
+            imageContainer.style.display = 'flex';
+            // Animação de entrada
+            imageContainer.style.opacity = '0';
+            requestAnimationFrame(() => {
+                imageContainer.style.transition = 'opacity 0.4s ease';
+                imageContainer.style.opacity = '1';
+            });
+        } else {
+            imageContainer.style.display = 'none';
+            questionImage.src = '';
+        }
     }
     
     document.getElementById('questionTitle').textContent = question.question;
